@@ -1,0 +1,16 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:13306/test?useSSL=false&rewriteBatchedStatements=true
+    username: admin
+    password: admin
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        show_sql: false
+        use_sql_comments: true
+        format_sql: false
+        default_batch_fetch_size: 100
