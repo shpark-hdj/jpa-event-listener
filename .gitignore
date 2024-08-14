@@ -79,3 +79,5 @@ work/
 
 # Local application.yml
 application-local.yml
+
+.gradle
