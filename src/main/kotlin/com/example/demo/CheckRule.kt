@@ -6,7 +6,7 @@ import javax.persistence.Entity
 import javax.persistence.EntityListeners
 import javax.persistence.Id
 
-@EntityListeners(CheckRuleListener::class)
+@EntityListeners(CheckRuleEventListener::class)
 @Entity
 class CheckRule(
     @Id
