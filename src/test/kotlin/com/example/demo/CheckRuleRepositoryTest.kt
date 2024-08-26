@@ -26,4 +26,31 @@ class CheckRuleRepositoryTest {
         )
         checkRuleRepository.deleteById("rule2")
     }
+
+    @Test
+    fun `Id 생성 전략을 사용하지 않았을 때 insert 확인`() {
+        // bulk insert 안되고 단건 insert 쿼리로 실행됨
+        checkRuleRepository.saveAll(listOf(
+            CheckRule(
+                checkRuleId = "rule10",
+                ruleContent = "test10"
+            ),
+            CheckRule(
+                checkRuleId = "rule11",
+                ruleContent = "test11"
+            ),
+            CheckRule(
+                checkRuleId = "rule12",
+                ruleContent = "test12"
+            ),
+            CheckRule(
+                checkRuleId = "rule13",
+                ruleContent = "test13"
+            ),
+            CheckRule(
+                checkRuleId = "rule14",
+                ruleContent = "test14"
+            )
+        ))
+    }
 }

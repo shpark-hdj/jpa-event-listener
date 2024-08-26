@@ -15,7 +15,18 @@ spring:
         format_sql: false
         default_batch_fetch_size: 100
 #        session_factory:
-#          statement_inspector: com.example.demo.EnhancedSqlLoggingInspector
+#          statement_inspector: com.example.demo.QueryLoggingInspector
   sql:
     init:
       mode: always
+
+logging:
+  level:
+#    org.springframework.boot.autoconfigure: debug
+#    org.springframework.web.servlet.DispatcherServlet: info  # debug 로 설정시 status, masked parameters 로그 조회
+#    org.hibernate.type: info  # debug 로 설정시 AttributeConverter 의 enum to string 로그 조회
+#    org.hibernate.type.descriptor.sql.BasicBinder: debug # trace 로 설정시 sql binding parameter 로그 조회
+    org.hibernate.SQL: debug  # debug 로 설정시 jpql sql 로그 조회
+#    org.mongodb.driver: info  # debug 로 설정시 mongodb 실행 쿼리 조회
+#    com.querydsl.sql: debug
+#    org.apache.http.impl.conn.PoolingHttpClientConnectionManager: info
